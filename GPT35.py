@@ -2,7 +2,7 @@
 
 import openai
 
-openai.api_key = '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'
+openai.api_key = '<Your_openai_APIkey>'
 model_id = 'gpt-3.5-turbo'
 
 def ChatGPT_conversation(conversation):
