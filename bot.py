@@ -2,7 +2,7 @@ import discord
 
 from GPT35 import ChatGPT_conversation
 
-BOT_TOKEN = 'MTEwMTUyNTk0NTMyNTczMTk4Mw.Gp32n2.xKmfV3P0JtU4uF8qUNopf71OEAKVcTiyEHGC6E'
+BOT_TOKEN = '<Your_openai_APIkey>'
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
