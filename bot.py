@@ -4,7 +4,8 @@ from GPT35 import ChatGPT_conversation
 
 BOT_TOKEN = '<Your_bot_token>'
 
-intents = discord.Intents.default()
+#you must to set your bot privilege content for use in mutual server
+intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
 @client.event
