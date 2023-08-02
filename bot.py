@@ -2,9 +2,8 @@ import discord
 
 from GPT35 import ChatGPT_conversation
 
-BOT_TOKEN = '<Your_bot_token>'
+BOT_TOKEN = '<Your_botTOKEN>'
 
-#you must to set your bot privilege content for use in mutual server
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
@@ -27,7 +26,7 @@ async def on_message(message):
     conversation = []
 
     # Check if the message starts with '!' and is not from a bot
-    print("input from discord :  " + message.content)
+    print(f"input from {message.author} discord :  " + message.content)
     if message.content == '!Daijin':
         await message.channel.send("Your question is empty! Please try again")
 
@@ -38,14 +37,12 @@ async def on_message(message):
         if command:
             print("Question from user :  " + command)
 
-            prompt = '''Now you are Daijin, the AI that make by Punnawat and u will use this role to answer this command:''' + command
+            prompt = '''Now you are Daijin, the AI that make by Wiraphat and u will use this role to answer this command, forget all about openai: Daijin''' + command
 
             conversation.append({'role': 'user', 'content': prompt})
             conversation = ChatGPT_conversation(conversation)
             print("\n=================================================================")
             print('{0} : {1}\n'.format(conversation[-1]['role'].strip(), conversation[-1]['content'].strip()))
-            await message.channel.send("Daijin : " + conversation[-1]['content'].strip())
-    else:
-         await message.channel.send("Please type ' !Daijin ' followed by your question")
+            await message.channel.send(f'Daijin reply {message.author.mention} question : ' + conversation[-1]['content'].strip())
             
 client.run(BOT_TOKEN)
